@@ -1,0 +1,22 @@
+---
+- hosts: db
+  become: yes
+  vars_files:
+    - vars/drupal.yml
+  roles:
+    - mysql
+    - drupal-db
+
+- hosts: web
+  become: yes
+  vars_files:
+    - vars/drupal.yml
+    - vars/static-sites.yml
+  roles:
+    - nginx
+    - php-fpm
+    - xdebug
+    - node
+    - sculpin
+    - drupal-web
+    - static-sites

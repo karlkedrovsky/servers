@@ -1,0 +1,18 @@
+---
+- name: update package sources
+  apt: update_cache=yes cache_valid_time=3600
+- name: install mysql packages
+  apt: name={{ item }} state=present
+  with_items:
+    - mysql-server
+    - mysql-client
+- name: install mysql bindings for python
+  apt: name=python-mysqldb state=present
+- name: update mysql bind address
+  lineinfile: dest=/etc/mysql/my.cnf regexp="^bind-address" line="bind-address = {{ansible_eth1.ipv4.address}}"
+  notify:
+    - restart mysql
+- name: secure mysql
+  mysql_db: name=test state=absent
+- name: add mysql web user
+  mysql_user: name=web password=web host=% priv=*.*:ALL

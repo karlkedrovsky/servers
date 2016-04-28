@@ -1,0 +1,8 @@
+---
+static_sites:
+  presentations:
+    docroot: /var/www/personal/presentations
+  urlogintemplates:
+    docroot: /var/www/vml/urlogintemplates/dist
+  kedrovsky:
+    docroot: /var/www/personal/kedrovsky-sculpin/output_dev

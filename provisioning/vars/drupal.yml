@@ -1,0 +1,10 @@
+---
+drupal_sites:
+  unitedrentals:
+    docroot: /var/www/vml/unitedrentals/docroot
+  console:
+    docroot: /var/www/personal/console/docroot
+  crownpackaging:
+    docroot: /var/www/freelance/crownpackaging
+  minddrive:
+    docroot: /var/www/vml/minddrive/docroot
