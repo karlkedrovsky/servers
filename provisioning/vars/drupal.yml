@@ -8,3 +8,5 @@ drupal_sites:
     docroot: /var/www/freelance/crownpackaging
   minddrive:
     docroot: /var/www/vml/minddrive/docroot
+  citygymkc:
+    docroot: /var/www/freelance/citygymkc
