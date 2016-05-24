@@ -3,14 +3,17 @@
   become: yes
   vars_files:
     - vars/drupal.yml
+    - vars/wordpress.yml
   roles:
     - mysql
     - drupal-db
+    - wordpress-db
 
 - hosts: web
   become: yes
   vars_files:
     - vars/drupal.yml
+    - vars/wordpress.yml
     - vars/static-sites.yml
   roles:
     - nginx
@@ -19,4 +22,5 @@
     - node
     - sculpin
     - drupal-web
+    - wordpress-web
     - static-sites

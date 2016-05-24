@@ -10,3 +10,5 @@ drupal_sites:
     docroot: /var/www/vml/minddrive/docroot
   citygymkc:
     docroot: /var/www/freelance/citygymkc
+  entityprint:
+    docroot: /var/www/vml/entityprint/docroot

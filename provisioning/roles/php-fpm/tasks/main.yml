@@ -31,6 +31,14 @@
   lineinfile: dest=/etc/php5/fpm/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
   notify:
     - restart php
+- name: set php display_errors on
+  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^display_errors =" line="display_errors = On"
+  notify:
+    - restart php
+- name: set php display_startup_errors on
+  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^display_startup_errors =" line="display_startup_errors = On"
+  notify:
+    - restart php
 - name: set php cli timezone
   lineinfile: dest=/etc/php5/cli/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
   notify:

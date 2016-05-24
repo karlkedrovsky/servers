@@ -35,8 +35,6 @@
 - name: configure drupal sites 
   template: src=drupal.nginx.j2 dest=/etc/nginx/sites-available/{{ item.key }}
   with_dict: drupal_sites
-  notify:
-    - restart nginx
 - name: enable drupal sites
   file: src=/etc/nginx/sites-available/{{ item.key }} dest=/etc/nginx/sites-enabled/{{ item.key }} state=link
   with_dict: drupal_sites

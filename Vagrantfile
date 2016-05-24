@@ -5,8 +5,10 @@ Vagrant.configure("2") do |config|
   #   config.vm.box = "trusty"
   #   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 
-  config.vm.box = "ubuntu/trusty64"
-
+  # config.vm.box = "ubuntu/trusty64"
+  # config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "geerlingguy/ubuntu1604"
+  
   config.ssh.insert_key = false
   config.ssh.forward_agent = true
 
