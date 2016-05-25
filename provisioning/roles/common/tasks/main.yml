@@ -12,6 +12,7 @@
     - zip
     - unzip
     - tree
+    - htop
 
 - name: update hostname
   hostname: name={{ hostname }}
