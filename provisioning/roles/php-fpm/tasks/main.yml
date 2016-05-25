@@ -4,43 +4,42 @@
 - name: install php packages
   apt: name={{ item }} state=present
   with_items:
-    - php5-fpm
-    - php5-sqlite
-    - php5-mysql
-    - php5-gd
-    - php5-curl
-    - php5-mcrypt
-    - php5-cli
-    - php5-memcached
+    - php-fpm
+    - php-sqlite3
+    - php-mysql
+    - php-gd
+    - php-curl
+    - php-mcrypt
+    - php-cli
+    - php-memcached
     - php-pear
-    - php-apc
     - python-mysqldb
 - name: increase php memory limit
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^memory_limit =" line="memory_limit = 256M"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^memory_limit =" line="memory_limit = 256M"
   notify:
     - restart php
 - name: increase php max post size
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^post_max_size =" line="post_max_size = 1024M"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^post_max_size =" line="post_max_size = 1024M"
   notify:
     - restart php
 - name: increase php max upload size
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^upload_max_filesize =" line="upload_max_filesize = 1024M"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^upload_max_filesize =" line="upload_max_filesize = 1024M"
   notify:
     - restart php
 - name: set php fpm timezone
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
   notify:
     - restart php
 - name: set php display_errors on
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^display_errors =" line="display_errors = On"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^display_errors =" line="display_errors = On"
   notify:
     - restart php
 - name: set php display_startup_errors on
-  lineinfile: dest=/etc/php5/fpm/php.ini regexp="^display_startup_errors =" line="display_startup_errors = On"
+  lineinfile: dest=/etc/php/7.0/fpm/php.ini regexp="^display_startup_errors =" line="display_startup_errors = On"
   notify:
     - restart php
 - name: set php cli timezone
-  lineinfile: dest=/etc/php5/cli/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
+  lineinfile: dest=/etc/php/7.0/cli/php.ini regexp="^date.timezone =" line="date.timezone = America/Chicago"
   notify:
     - restart php
 - name: install composer
