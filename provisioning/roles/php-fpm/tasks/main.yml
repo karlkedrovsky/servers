@@ -10,6 +10,7 @@
     - php-gd
     - php-curl
     - php-mcrypt
+    - php-mbstring
     - php-cli
     - php-memcached
     - php-pear

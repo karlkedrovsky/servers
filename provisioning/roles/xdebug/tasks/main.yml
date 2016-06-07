@@ -29,3 +29,5 @@
   lineinfile: dest=/etc/php/7.0/mods-available/xdebug.ini regexp="^xdebug.max_nesting_level" line="xdebug.max_nesting_level = 256"
   notify:
     - restart php
+- name: disable xdebug for cli
+  file: path=/etc/php/7.0/cli/conf.d/20-xdebug.ini state=absent
