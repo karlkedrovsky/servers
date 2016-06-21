@@ -1,0 +1,15 @@
+---
+- name: add jenkins repo key
+  apt_key: url=https://jenkins-ci.org/debian/jenkins-ci.org.key
+- name: add jenkins package repo
+  apt_repository: repo='deb http://pkg.jenkins.io/debian binary/'
+- name: install jenkins
+  apt: name=jenkins state=present force=yes
+- name: install nginx
+  apt: name=nginx state=present force=yes
+- name: configure nginx to proxy to jenkins
+  template: src=proxy.nginx.j2 dest=/etc/nginx/sites-available/default
+  notify:
+    - restart nginx
+- name: get jenkins cli jar
+  get_url: url=http://localhost/jnlpJars/jenkins-cli.jar dest=/usr/local/share/jenkins-cli.jar

@@ -24,3 +24,8 @@
     - drupal-web
     - wordpress-web
     - static-sites
+
+- hosts: ci
+  become: yes
+  roles:
+    - jenkins

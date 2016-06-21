@@ -3,3 +3,6 @@ web
 
 [db]
 db
+
+[ci]
+ci

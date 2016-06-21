@@ -30,9 +30,14 @@ Vagrant.configure("2") do |config|
   config.vm.define "db" do |db|
     db.vm.hostname = "db"
     db.vm.network :private_network, ip: "10.1.0.13"
+  end
+
+  config.vm.define "ci" do |ci|
+    ci.vm.hostname = "ci"
+    ci.vm.network :private_network, ip: "10.1.0.14"
 
     # this goes in the last vm definition to ensure it runs after all vms are created
-    db.vm.provision "ansible" do |ansible|
+    ci.vm.provision "ansible" do |ansible|
       ansible.playbook = "provisioning/playbook.yml"
       ansible.inventory_path = "provisioning/inventory"
       ansible.limit = "all"
