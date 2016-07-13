@@ -6,3 +6,5 @@ static_sites:
     docroot: /var/www/vml/urlogintemplates/dist
   kedrovsky:
     docroot: /var/www/personal/kedrovsky-sculpin/output_dev
+  vue-static:
+    docroot: /var/www/personal/vue-static/web
