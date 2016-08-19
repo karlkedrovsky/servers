@@ -12,3 +12,13 @@ drupal_sites:
     docroot: /var/www/freelance/citygymkc
   entityprint:
     docroot: /var/www/vml/entityprint/docroot
+  tomstown:
+    docroot: /var/www/freelance/tomstown
+  vue-drupal:
+    docroot: /var/www/personal/vue-drupal/docroot
+  drupal:
+    docroot: /var/www/personal/drupal
+  trabon:
+    docroot: /var/www/freelance/trabon/docroot
+  trabonck:
+    docroot: /var/www/freelance/trabonck/docroot

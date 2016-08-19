@@ -11,6 +11,7 @@
     - php-curl
     - php-mcrypt
     - php-mbstring
+    - php-zip
     - php-cli
     - php-memcached
     - php-pear
