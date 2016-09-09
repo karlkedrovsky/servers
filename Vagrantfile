@@ -21,7 +21,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "web" do |web|
     web.vm.hostname = "web"
     web.vm.network :private_network, ip: "10.1.0.12"
-    web.vm.synced_folder "/Users/kkedrovsky/projects", "/var/www", type: "nfs", nfs_export: false
+#    web.vm.synced_folder "/Users/kkedrovsky/projects", "/var/www", type: "nfs", nfs_export: false
+#    web.vm.synced_folder "/projects", "/var/www", type: "nfs", nfs_export: false
     config.vm.provider :virtualbox do |v|
       v.memory = 1024
     end

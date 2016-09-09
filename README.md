@@ -10,3 +10,11 @@ This repository contains a relatively simple Ansible and Vagrant based setup for
 ## Adding New Sites
 
 There are two vars files that specify the list of Drupal and static sites that will be configured - provisioning/vars/drupal.yml and provisioning/vars/static-sites.yml. Just add the name of the site (hostname and db name) as the key and the path to the docroot as the value and run "vagrant provision".
+
+## Notes
+
+The drupal-web role will look for two directories that are not under version control (don't want the contents on github.com, etc.). If they don't exist they will just be ignored.
+
+- provisioning/roles/drupal-web/files/.acquia
+- provisioning/roles/drupal-web/files/.drush
+
