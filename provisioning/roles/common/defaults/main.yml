@@ -1,6 +1,5 @@
 ---
-timezone: America/Chicago
-locale_language: en_US
-locale_codeset: en_US.UTF-8
+locale: "en_US.UTF-8"
+timezone: "America/Chicago"
 user_full_name: '"Karl Kedrovsky"'
-user_email: karl@kedrovsky.com
+user_email: "karl@kedrovsky.com"

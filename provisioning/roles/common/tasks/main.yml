@@ -17,10 +17,9 @@
 - name: update hostname
   hostname: name={{ hostname }}
 - name: update locale
-  command: locale-gen {{ locale_language }} {{ locale_codeset }}
-- name: update timezone
-  shell: echo {{ timezone }} | tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
-
+  locale_gen: name={{ locale }} state=present
+# - name: update timezone
+#   timezone: name=America/Chicago
 - name: register swap var
   stat: path=/var/swapfile
   register: swapfile
@@ -40,20 +39,20 @@
   lineinfile: dest=/etc/fstab regexp="^/var/swapfile" line="/var/swapfile none swap sw 0 0"
 
 - name: set git username
-  command: git config --file /home/vagrant/.gitconfig user.name {{ user_full_name }}
+  git_config: name=user.name scope=global value={{ user_full_name }}
   become: yes
   become_user: vagrant
 - name: set git email
-  command: git config --file /home/vagrant/.gitconfig user.email {{ user_email }}
+  git_config: name=user.email scope=global value={{ user_email }}
   become: yes
   become_user: vagrant
 
 - name: checkout oh-my-zsh
-  git: repo=https://github.com/karlkedrovsky/oh-my-zsh.git dest=/home/vagrant/oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=/home/vagrant/oh-my-zsh
   become: yes
   become_user: vagrant
 - name: checkout config
-  git: repo=https://github.com/karlkedrovsky/config.git dest=/home/vagrant/config
+  git: repo=https://github.com/karlkedrovsky/config dest=/home/vagrant/config
   become: yes
   become_user: vagrant
 - name: link .zshrc
