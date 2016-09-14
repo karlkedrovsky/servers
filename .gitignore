@@ -1,3 +1,4 @@
 .vagrant
 db.json
 clients/*
+provisioning/playbook.retry
