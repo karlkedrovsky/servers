@@ -13,9 +13,9 @@
 
 - name: configure wordpress sites 
   template: src=wordpress.nginx.j2 dest=/etc/nginx/sites-available/{{ item.key }}
-  with_dict: wordpress_sites
+  with_dict: "{{ wordpress_sites }}"
 - name: enable wordpress sites
   file: src=/etc/nginx/sites-available/{{ item.key }} dest=/etc/nginx/sites-enabled/{{ item.key }} state=link
-  with_dict: wordpress_sites
+  with_dict: "{{ wordpress_sites }}"
   notify:
     - restart nginx

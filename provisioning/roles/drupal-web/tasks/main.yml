@@ -16,7 +16,7 @@
   file: path=/usr/local/bin/drupal mode=0755
 
 - name: check for acquia files
-  sudo: false
+  become: false
   local_action: stat path=.acquia
   register: acquia_files
   ignore_errors: True
@@ -26,7 +26,7 @@
   become_user: vagrant
   when: acquia_files.stat.exists
 - name: check for drush files
-  sudo: false
+  become: false
   local_action: stat path=.drush
   register: drush_files
   ignore_errors: True
@@ -50,9 +50,9 @@
 
 - name: configure drupal sites 
   template: src=drupal.nginx.j2 dest=/etc/nginx/sites-available/{{ item.key }}
-  with_dict: drupal_sites
+  with_dict: "{{ drupal_sites }}"
 - name: enable drupal sites
   file: src=/etc/nginx/sites-available/{{ item.key }} dest=/etc/nginx/sites-enabled/{{ item.key }} state=link
-  with_dict: drupal_sites
+  with_dict: "{{ drupal_sites }}"
   notify:
     - restart nginx
