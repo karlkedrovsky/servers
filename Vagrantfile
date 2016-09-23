@@ -1,6 +1,24 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+module OS
+    def OS.windows?
+        (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.mac?
+        (/darwin/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.unix?
+        !OS.windows?
+    end
+
+    def OS.linux?
+        OS.unix? and not OS.mac?
+    end
+end
+
 Vagrant.configure("2") do |config|
   #   config.vm.box = "trusty"
   #   config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
@@ -21,8 +39,12 @@ Vagrant.configure("2") do |config|
   config.vm.define "web" do |web|
     web.vm.hostname = "web"
     web.vm.network :private_network, ip: "10.1.0.12"
-#    web.vm.synced_folder "/Users/kkedrovsky/projects", "/var/www", type: "nfs", nfs_export: false
-#    web.vm.synced_folder "/projects", "/var/www", type: "nfs", nfs_export: false
+    # Assuming we're running on a mac or a linux host machine
+    if OS.mac?
+      web.vm.synced_folder "/Users/kkedrovsky/projects", "/var/www", type: "nfs", nfs_export: false
+    else
+      web.vm.synced_folder "/projects", "/var/www", type: "nfs", nfs_export: false
+    end
     config.vm.provider :virtualbox do |v|
       v.memory = 1024
     end
