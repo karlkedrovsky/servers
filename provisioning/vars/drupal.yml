@@ -22,3 +22,5 @@ drupal_sites:
     docroot: /var/www/freelance/trabon/docroot
   trabonck:
     docroot: /var/www/freelance/trabonck/docroot
+  trabongroup:
+    docroot: /var/www/freelance/trabongroup/docroot
