@@ -1,6 +1,6 @@
 ---
-- name: update package sources
-  apt: update_cache=yes cache_valid_time=3600
+- name: update cache and upgrade existing packages
+  apt: upgrade=dist update_cache=yes cache_valid_time=3600 force=yes autoremove=yes
 - name: install common packages
   apt: name={{ item }} state=present
   with_items:
