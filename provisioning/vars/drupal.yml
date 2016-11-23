@@ -26,3 +26,5 @@ drupal_sites:
     docroot: /var/www/freelance/trabongroup/docroot
   hopehouse:
     docroot: /var/www/vml/hopehouse/docroot
+  lightning:
+    docroot: /var/www/vml/lightning/docroot

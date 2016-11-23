@@ -4,18 +4,22 @@
   vars_files:
     - vars/drupal.yml
     - vars/wordpress.yml
+    - vars/laravel.yml
   roles:
     - mysql
     - drupal-db
     - wordpress-db
+    - laravel-db
 
 - hosts: web
   become: yes
   vars_files:
     - vars/drupal.yml
     - vars/wordpress.yml
+    - vars/laravel.yml
     - vars/static-sites.yml
   roles:
+    - devtools
     - nginx
     - php-fpm
     - xdebug
@@ -23,6 +27,7 @@
     - sculpin
     - drupal-web
     - wordpress-web
+    - laravel-web
     - static-sites
 
 - hosts: ci
