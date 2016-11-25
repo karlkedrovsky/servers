@@ -1,6 +1,6 @@
 ---
 wordpress_sites:
   sescorp:
-    docroot: /var/www/freelance/sescorp
+    docroot: /projects/freelance/sescorp
   sescorpnew:
-    docroot: /var/www/freelance/sescorpnew
+    docroot: /projects/freelance/sescorpnew

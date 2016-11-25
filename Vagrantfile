@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
     if OS.mac?
       web.vm.synced_folder "/Users/kkedrovsky/projects", "/var/www", type: "nfs", nfs_export: false
     else
-      web.vm.synced_folder "/projects", "/var/www", type: "nfs", nfs_version: 4, nfs_udp: false, nfs_export: false
+      web.vm.synced_folder "/projects", "/projects", type: "nfs", nfs_version: 4, nfs_udp: false, nfs_export: false
     end
     config.vm.provider :virtualbox do |v|
       v.memory = 1024

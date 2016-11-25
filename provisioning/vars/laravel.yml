@@ -1,4 +1,4 @@
 ---
 laravel_sites:
   moreforall:
-    docroot: /var/www/vml/moreforall/public_html/public
+    docroot: /projects/vml/moreforall/public_html/public

@@ -1,12 +1,12 @@
 ---
 static_sites:
   presentations:
-    docroot: /var/www/personal/presentations
+    docroot: /projects/personal/presentations
   urlogintemplates:
-    docroot: /var/www/vml/urlogintemplates/dist
+    docroot: /projects/vml/urlogintemplates/dist
   kedrovsky:
-    docroot: /var/www/personal/kedrovsky-sculpin/output_dev
+    docroot: /projects/personal/kedrovsky-sculpin/output_dev
   vue-static:
-    docroot: /var/www/personal/vue-static/web
+    docroot: /projects/personal/vue-static/web
   tillvodka:
-    docroot: /var/www/vml/comingsoon.tillvodka.com/htdocs
+    docroot: /projects/vml/comingsoon.tillvodka.com/htdocs

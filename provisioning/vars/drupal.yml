@@ -1,30 +1,30 @@
 ---
 drupal_sites:
   unitedrentals:
-    docroot: /var/www/vml/unitedrentals/docroot
+    docroot: /projects/vml/unitedrentals/docroot
   console:
-    docroot: /var/www/personal/console/docroot
+    docroot: /projects/personal/console/docroot
   crownpackaging:
-    docroot: /var/www/freelance/crownpackaging
+    docroot: /projects/freelance/crownpackaging
   minddrive:
-    docroot: /var/www/vml/minddrive/docroot
+    docroot: /projects/vml/minddrive/docroot
   citygymkc:
-    docroot: /var/www/freelance/citygymkc
+    docroot: /projects/freelance/citygymkc
   entityprint:
-    docroot: /var/www/vml/entityprint/docroot
+    docroot: /projects/vml/entityprint/docroot
   tomstown:
-    docroot: /var/www/freelance/tomstown
+    docroot: /projects/freelance/tomstown
   vue-drupal:
-    docroot: /var/www/personal/vue-drupal/docroot
+    docroot: /projects/personal/vue-drupal/docroot
   drupal:
-    docroot: /var/www/personal/drupal
+    docroot: /projects/personal/drupal
   trabon:
-    docroot: /var/www/freelance/trabon/docroot
+    docroot: /projects/freelance/trabon/docroot
   trabonck:
-    docroot: /var/www/freelance/trabonck/docroot
+    docroot: /projects/freelance/trabonck/docroot
   trabongroup:
-    docroot: /var/www/freelance/trabongroup/docroot
+    docroot: /projects/freelance/trabongroup/docroot
   hopehouse:
-    docroot: /var/www/vml/hopehouse/docroot
+    docroot: /projects/vml/hopehouse/docroot
   lightning:
-    docroot: /var/www/vml/lightning/docroot
+    docroot: /projects/vml/lightning/docroot
