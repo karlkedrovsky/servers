@@ -9,7 +9,7 @@ drupal_sites:
   minddrive:
     docroot: /projects/vml/minddrive/docroot
   citygymkc:
-    docroot: /projects/freelance/citygymkc
+    docroot: /projects/freelance/citygymkc/docroot
   entityprint:
     docroot: /projects/vml/entityprint/docroot
   tomstown:
