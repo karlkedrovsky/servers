@@ -2,6 +2,8 @@
 
 This repository contains an Ansible and Vagrant based setup for running development VMs, mostly for Drupal development. It is very much a work in progress and there is a very good chance that just about everything could be done a bit better. The CI server configuration is very early days, I'm not even using it at the moment.
 
+I've moved the Ansible role defitions to [their own repo](https://github.com/karlkedrovsky/shared-ansible-roles), you'll need those in order to make the Ansible setup in this repo work
+
 You'll need to be running a fairly recent version of Ansible. I've tested it on 2.1.1 and I know that 2.0 does *not* work.
 
 ## Assumptons
