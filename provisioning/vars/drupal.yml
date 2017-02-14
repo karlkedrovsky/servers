@@ -28,3 +28,5 @@ drupal_sites:
     docroot: /projects/vml/hopehouse/docroot
   lightning:
     docroot: /projects/vml/lightning/docroot
+  crest:
+    docroot: /projects/personal/crest
