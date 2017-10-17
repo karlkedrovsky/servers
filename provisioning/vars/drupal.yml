@@ -48,3 +48,5 @@ drupal_sites:
     docroot: /projects/vml/thunder/docroot
   ua:
     docroot: /projects/vml/ua/docroot
+  crest:
+    docroot: /projects/personal/crest
