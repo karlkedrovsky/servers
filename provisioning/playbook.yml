@@ -24,7 +24,7 @@
     - php-fpm
     - xdebug
     - node
-    - sculpin
+    - foundation
     - drupal-web
     - wordpress-web
     - laravel-web

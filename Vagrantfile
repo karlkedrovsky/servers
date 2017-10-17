@@ -41,7 +41,9 @@ Vagrant.configure("2") do |config|
     web.vm.network :private_network, ip: "10.1.0.12"
     # Assuming we're running on a mac or a linux host machine
     if OS.mac?
-      web.vm.synced_folder "/Users/kkedrovsky/projects", "/projects", type: "nfs", nfs_export: false
+#      web.vm.synced_folder "/Users/kkedrovsky/projects", "/projects", type: "nfs", nfs_export: false, mount_options: ["lookupcache=none"]
+      web.vm.synced_folder "/Users/kkedrovsky/projects", "/projects", type: "nfs", nfs_export: false, nfs_udp: false
+#     web.vm.synced_folder "/Users/kkedrovsky/projects/freelance/trabon-email", "/test/freelance/trabon-email", type: "rsync"
     else
       web.vm.synced_folder "/projects", "/projects", type: "nfs", nfs_version: 4, nfs_udp: false, nfs_export: false
     end

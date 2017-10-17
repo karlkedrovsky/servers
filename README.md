@@ -15,6 +15,10 @@ There are three vars files that specify the list of Drupal, Wordpress, and stati
 
 ## Notes
 
+If the box gets out of date related to the VirtualBox guests software the vagrant-vbguest can be used to make sure the versions are in sync
+
+    vagrant plugin install vagrant-vbguest
+
 The drupal-web role will look for two directories that are not under version control (don't want the contents on github.com, etc.). If they don't exist they will just be ignored.
 
 - provisioning/roles/drupal-web/files/.acquia

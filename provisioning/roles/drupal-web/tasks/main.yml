@@ -10,10 +10,8 @@
   get_url: url=http://files.drush.org/drush.phar dest=/usr/local/bin/drush
 - name: insure drush is executable  
   file: path=/usr/local/bin/drush mode=0755
-- name: install drupal console
-  get_url: url=https://drupalconsole.com/installer dest=/usr/local/bin/drupal
 - name: insure drush is executable  
-  file: path=/usr/local/bin/drupal mode=0755
+  file: path=/usr/local/bin/drush mode=0755
 
 - name: check for acquia files
   become: false
@@ -39,14 +37,6 @@
   file: path=/home/vagrant/drush-dump-dir state=directory
   become: yes
   become_user: vagrant
-- name: check for drupal console files
-  stat: path=/home/vagrant/.console
-  register: drupal_console_files
-- name: initialize drupal config
-  command: drupal init --override --yes
-  become: yes
-  become_user: vagrant
-  when: drupal_console_files.stat.exists == False
 
 - name: configure drupal sites 
   template: src=drupal.nginx.j2 dest=/etc/nginx/sites-available/{{ item.key }}

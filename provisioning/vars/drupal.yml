@@ -28,3 +28,23 @@ drupal_sites:
     docroot: /projects/vml/hopehouse/docroot
   lightning:
     docroot: /projects/vml/lightning/docroot
+  ecktest:
+    docroot: /projects/personal/ecktest/web
+  mediatest:
+    docroot: /projects/vml/mediatest/web
+  thecoterie:
+    docroot: /projects/vml/thecoterie
+  starter-theme:
+    docroot: /projects/personal/starter-theme/web
+  unitedrentals-apimigrate:
+    docroot: /projects/personal/unitedrentals-apimigrate/web
+  kelex:
+    docroot: /projects/vml/unitedrentals-kelex/docroot
+  kcdug-emulsify:
+    docroot: /projects/personal/kcdug-emulsify/web
+  emulsify:
+    docroot: /projects/personal/emulsify
+  thunder:
+    docroot: /projects/vml/thunder/docroot
+  ua:
+    docroot: /projects/vml/ua/docroot

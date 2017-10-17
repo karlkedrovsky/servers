@@ -4,3 +4,5 @@ wordpress_sites:
     docroot: /projects/freelance/sescorp
   sescorpnew:
     docroot: /projects/freelance/sescorpnew
+  sme:
+    docroot: /projects/freelance/sme
